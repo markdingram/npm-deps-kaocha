@@ -1,0 +1,13 @@
+#kaocha/v1
+    {:bindings        {kaocha.type.cljs/*debug* true}
+     :capture-output? false
+     :tests           [{:id                    :unit-cljs
+                        :type                  :kaocha.type/cljs
+                        :cljs/precompile?      true
+                        :cljs/compiler-options {;; main opt is required for precompile? in plan stage but causes failure to start the repl later
+                                                :main         npm_deps.main
+                                                :verbose      true
+                                                :install-deps true
+                                                :npm-deps     {:left-pad "1.1.3"}}
+                        :source-paths          ["src"]
+                        :test-paths            ["test"]}]}

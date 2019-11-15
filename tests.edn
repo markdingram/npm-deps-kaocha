@@ -1,0 +1,10 @@
+#kaocha/v1
+    {:bindings        {kaocha.type.cljs/*debug* true}
+     :capture-output? false
+     :tests           [{:id                    :unit-cljs
+                        :type                  :kaocha.type/cljs
+                        :cljs/compiler-options {:verbose      true
+                                                :install-deps true
+                                                :npm-deps     {:left-pad "1.1.3"}}
+                        :source-paths          ["src"]
+                        :test-paths            ["test"]}]}

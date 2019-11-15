@@ -1,0 +1,19 @@
+{:deps
+          {org.clojure/clojure       {:mvn/version "1.10.1"}
+           org.clojure/clojurescript {:mvn/version "1.10.520"}
+
+           lambdaisland/kaocha       {:mvn/version "0.0-554"}
+           lambdaisland/kaocha-cljs  {:mvn/version "0.0-59"}}
+
+ :paths   ["src" "resources" "test/cljs"]
+
+ :aliases {:test
+           {:main-opts ["-m" "kaocha.runner"]}
+
+           :local
+           {:override-deps
+            {org.clojure/clojurescript {:local/root "../../clojure/clojurescript"}
+             lambdaisland/kaocha-cljs  {:local/root "../../lambdaisland/kaocha-cljs"}}}}}
+
+
+
